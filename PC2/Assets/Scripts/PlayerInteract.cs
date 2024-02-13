@@ -20,7 +20,10 @@ public class PlayerInteract : MonoBehaviour
                 currentInteractive.Unhighlight();
             }
             currentInteractive = newInteractive;
-            currentInteractive.Highlight();
+            if (currentInteractive != null)
+            {
+                currentInteractive.Highlight();
+            }
         }
     }
 
