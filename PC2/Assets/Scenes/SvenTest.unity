@@ -411,6 +411,17 @@ RectTransform:
   m_AnchoredPosition: {x: 2.44, y: 1.14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1012186345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4228927175889821310, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+  m_PrefabInstance: {fileID: 1823361186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae2b301fd5301642807c2b4261b0b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058727484
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +656,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 225069cc-44b4-4957-b5df-fc80e1f3cd38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Interact[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1012186345}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerInteract, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714845186327483094, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4228927175889821310, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: interactBox.x
       value: 3

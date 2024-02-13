@@ -15,7 +15,7 @@ public class TestInteractable : MonoBehaviour, IInteractive
 
     public void Interact()
     {
-        
+        Debug.Log(gameObject.name);
     }
 
     public void Unhighlight()
