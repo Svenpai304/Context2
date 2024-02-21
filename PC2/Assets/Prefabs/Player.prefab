@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5392995803066290613}
   - component: {fileID: 5392995803066290612}
+  - component: {fileID: 7332889884006026217}
   - component: {fileID: 5392995803066290600}
   - component: {fileID: 5392995803066290603}
   - component: {fileID: 3714845186327483094}
@@ -91,6 +92,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7332889884006026217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392995803066290614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf06fd193e1c6cc4a891b3a011ffde08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  inDialogue: 0
 --- !u!50 &5392995803066290600
 Rigidbody2D:
   serializedVersion: 4
@@ -190,8 +205,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8061970971581875655}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 7332889884006026217}
+        m_TargetAssemblyTypeName: PlayerAbilityManager, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -210,8 +225,8 @@ MonoBehaviour:
     m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta,/Touchscreen/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2215816771910097580}
-        m_TargetAssemblyTypeName: PlayerJump, Assembly-CSharp
+      - m_Target: {fileID: 7332889884006026217}
+        m_TargetAssemblyTypeName: PlayerAbilityManager, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -264,6 +279,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cf917aa4-c924-4828-b9f7-dd7853f03320
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7332889884006026217}
+        m_TargetAssemblyTypeName: PlayerAbilityManager, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 225069cc-44b4-4957-b5df-fc80e1f3cd38
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -281,13 +312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcee606998e6a0b43bb621bfac562657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 12
-  maxAcceleration: 35
-  maxAirAcceleration: 25
+  maxSpeed: 7.5
+  maxAcceleration: 27.5
+  maxAirAcceleration: 27.5
   maxDeceleration: 30
-  maxAirDeceleration: 0
-  maxTurnSpeed: 35
-  maxAirTurnSpeed: 35
+  maxAirDeceleration: 0.3
+  maxTurnSpeed: 25
+  maxAirTurnSpeed: 100
   extraHeight: 0.03
   movingPlatformMask:
     serializedVersion: 2
@@ -320,11 +351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf25fe48be12ce344bf6810b09fad06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 4.8
+  jumpHeight: 5.5
   timeToJumpApex: 0.5
   upwardMovementMultiplier: 1
-  downwardMovementMultiplier: 1.1
-  jumpCutOff: 6
+  downwardMovementMultiplier: 1.05
+  jumpCutOff: 2
   coyoteTime: 0.14
   jumpBuffer: 0.1
   onGround: 0
@@ -364,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae2b301fd5301642807c2b4261b0b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactBox: {x: 0, y: 0}
+  interactBox: {x: 3, y: 2}
   interactMask:
     serializedVersion: 2
     m_Bits: 0
