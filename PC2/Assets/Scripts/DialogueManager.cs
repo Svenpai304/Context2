@@ -14,11 +14,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject dialogueObj;
     [SerializeField] private float charTime;
+
     private string[] lines;
     private int index;
 
-
-    void Awake()
+    private void Awake()
     {
         instance = this;
     }
@@ -46,13 +46,24 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string[] _lines)
     {
+        PlayerAbilityManager.instance.DisableAll();
+        PlayerAbilityManager.instance.inDialogue = true;
         lines = _lines;
         index = 0;
         dialogueActive = true;
-
+        StopAllCoroutines();
         dialogueObj.SetActive(true);
         text.text = string.Empty;
         StartCoroutine(TypeLine());
+    }
+
+    public void EndDialogue()
+    {
+        StopAllCoroutines();
+        dialogueObj.SetActive(false);
+        dialogueActive = false;
+        PlayerAbilityManager.instance.EnableAll();
+        PlayerAbilityManager.instance.inDialogue = false;
     }
 
     private void NextLine()
@@ -63,11 +74,9 @@ public class DialogueManager : MonoBehaviour
             text.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-
         else
         {
-            dialogueObj.SetActive(false);
-            dialogueActive = false;
+            EndDialogue();
         }
     }
 

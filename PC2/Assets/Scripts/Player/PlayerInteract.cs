@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteract : MonoBehaviour, IAbility
 {
 
     [SerializeField] private Vector2 interactBox;
@@ -15,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
         IInteractive newInteractive = LookForInteractives();
         if (currentInteractive != newInteractive)
         {
-            if(currentInteractive != null)
+            if (currentInteractive != null)
             {
                 currentInteractive.Unhighlight();
             }
@@ -27,10 +28,23 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    public void Interact()
+    public void Interact(InputAction.CallbackContext c)
     {
-        if (currentInteractive == null) { return; }
-        currentInteractive.Interact();
+        if (c.started)
+        {
+            if (currentInteractive == null) { return; }
+            currentInteractive.Interact();
+        }
+    }
+
+    public void Disable()
+    {
+        enabled = false;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
     }
 
     private IInteractive LookForInteractives()
@@ -52,4 +66,16 @@ public class PlayerInteract : MonoBehaviour
         }
         return closest;
     }
+
+    #region unused interface bits
+    public void Move(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+
+    public void Jump(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+    #endregion
 }

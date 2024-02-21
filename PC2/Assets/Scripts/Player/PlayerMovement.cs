@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IAbility
 {
     Rigidbody2D rb;
     GroundDetect groundDetect;
@@ -62,11 +62,22 @@ public class PlayerMovement : MonoBehaviour
         directionX = Mathf.Round(ctx.ReadValue<Vector2>().x); //Boils down movement inputs to left right or no
     }
 
+    public void Disable()
+    {
+        enabled = false;
+        rb.velocity = Vector2.zero;
+        directionX = 0;
+    }
 
+    public void Enable()
+    {
+        enabled = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
+
         ParentToPlatform();
         onGround = groundDetect.GetOnGround(); //Ground check
         //TrainBehaviour(); //Detects and saves the speed of any train you stand on. Also deletes any memory of them when leaving except for the speed that is yet to be applied. It gives the signal to FixedUpdate to start applying that speed
@@ -263,6 +274,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    #region unused interface bits
+    public void Jump(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+
+    public void Interact(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+
+    #endregion
     /*private void Animations()
     {
 

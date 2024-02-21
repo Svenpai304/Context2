@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump : MonoBehaviour, IAbility
 {
     Rigidbody2D rb;
     GroundDetect groundDetect;
@@ -55,8 +55,19 @@ public class PlayerJump : MonoBehaviour
         }
 
     }
+    public void Disable()
+    {
+        enabled = false;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+    }
+
     private void Update()
     {
+
         JumpBuffer();
         onGround = groundDetect.GetOnGround(); //Ground check
         if (!currentlyJumping && !onGround)
@@ -214,6 +225,18 @@ public class PlayerJump : MonoBehaviour
         //But clamp the Y variable within the bounds of the speed limit, for the terminal velocity assist option
         //rb.velocity = new Vector3(velocity.x, Mathf.Clamp(velocity.y, -speedLimit, 100));
     }
+
+    #region unused interface bits
+    public void Move(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+
+    public void Interact(InputAction.CallbackContext c)
+    {
+        //not used
+    }
+    #endregion
 }
 //Superjump still seems to happen on occasion...
 //Perhaps it's because some things happen on update and some things happen on fixedupdate. Maybe at some point update reads or writes data exactly between when fixedupdate should change it and has changed it
