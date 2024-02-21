@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour, IAbility
                 desiredVelocity = new Vector2(momentum, 0f); //If the input is nothing just move at the platform's speed
             }
         }
-        //Animations();
+        Animations();
     }
 
     private void FixedUpdate()
@@ -286,7 +286,7 @@ public class PlayerMovement : MonoBehaviour, IAbility
     }
 
     #endregion
-    /*private void Animations()
+    private void Animations()
     {
 
             anim.SetBool("Slide", false);
@@ -350,5 +350,5 @@ public class PlayerMovement : MonoBehaviour, IAbility
                 anim.SetBool("Fall", false);
             }
         
-    }*/
+    }
 }
