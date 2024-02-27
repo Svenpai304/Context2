@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f88de7fed752e46b37ce4a20b5290b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 1175660186}
   OnInteractive:
     m_PersistentCalls:
       m_Calls:
