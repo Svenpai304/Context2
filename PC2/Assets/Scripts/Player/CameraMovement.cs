@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
     PlayerMovement playerMove;
     PlayerJump playerJump;
     GameObject player;
@@ -51,6 +51,8 @@ public class CameraMovement : MonoBehaviour
 
     public bool playingRight;
     public bool playingLeft;
+
+    public bool locked;
 
 
 
@@ -118,8 +120,11 @@ public class CameraMovement : MonoBehaviour
     void FixedUpdate()
     {
         offset.y = standardY;
-        Vector3 targetPosition = target.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, damping);
+        if (!locked)
+        {
+            Vector3 targetPosition = target.position + offset;
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, damping);
+        }
 
         if (playerMove.onGround)
         {
@@ -296,5 +301,17 @@ public class CameraMovement : MonoBehaviour
         {
             offset.x = -lookAhead;
         }
+    }
+
+    public void Lock(Vector3 pos)
+    {
+        locked = true;
+        transform.position = pos;
+    }
+
+    public void Unlock(Vector3 pos)
+    {
+        locked = false;
+        transform.position = pos;
     }
 }
