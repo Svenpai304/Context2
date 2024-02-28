@@ -43,10 +43,6 @@ public class PlayerMovement : MonoBehaviour, IAbility
     public LayerMask wallMask;
     public float aboveGroundDistance; //Moves the raycasts used for wall detection off the floor
 
-    
-
-
-
     // Start is called before the first frame update
     void Start()
     {
