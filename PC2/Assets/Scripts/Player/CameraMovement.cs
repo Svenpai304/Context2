@@ -20,8 +20,10 @@ public class CameraMovement : MonoBehaviour
 
     [Header("Camera Stats")]
     public float damping;
+    public float longFallDamping;
     public float lookAhead;
     public float standardY;
+    public float fallingY;
     public float deadZoneX;
     public float deadZoneY;
     public float airSpeedDeadZoneX;
@@ -36,6 +38,7 @@ public class CameraMovement : MonoBehaviour
     public float minSize;
     public float momentumLookAhead;
     public float speedEffect;
+    public float longFallDistance;
 
     [Header("Internal Math")]
     public Vector3 velocity = Vector3.zero;
@@ -45,12 +48,14 @@ public class CameraMovement : MonoBehaviour
     public Vector3 camSize;
     public Vector3 sizeOffset;
 
+    public float targetY;
     public float groundedTimerRight;
     public float groundedTimerLeft;
     public float groundedTimerStop;
 
     public bool playingRight;
     public bool playingLeft;
+    public bool longFall;
 
     public bool locked;
 
@@ -119,15 +124,21 @@ public class CameraMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        offset.y = standardY;
         if (!locked)
         {
-            Vector3 targetPosition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, damping);
+            Vector3 targetPosition = new Vector3(target.position.x + offset.x, targetY, -10);
+            float dampValue = damping;
+            if(longFall)
+            {
+                dampValue = longFallDamping;
+            }
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, dampValue);
         }
 
         if (playerMove.onGround)
         {
+            longFall = false;
+            targetY = target.position.y + standardY;
             if (playerMove.velocity.x > 0.1)
             {
                 groundedTimerLeft = 0;
@@ -178,6 +189,15 @@ public class CameraMovement : MonoBehaviour
                 {
                     groundedTimerStop += Time.deltaTime;
                 }
+            }
+        }
+        float Ydistance = target.position.y + standardY - transform.position.y;
+        if (Mathf.Abs(Ydistance) > longFallDistance || longFall)
+        {
+            if (Ydistance < 0)
+            {
+                targetY = target.position.y + fallingY;
+                longFall = true;
             }
         }
         if (playerMove.transform.parent != null)
@@ -312,6 +332,7 @@ public class CameraMovement : MonoBehaviour
     public void Unlock(Vector3 pos)
     {
         locked = false;
+        targetY = pos.y + standardY;
         transform.position = pos;
     }
 }
