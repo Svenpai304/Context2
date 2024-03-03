@@ -151,7 +151,8 @@ Transform:
   m_LocalPosition: {x: -25.9, y: 45.4, z: -0.05070591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1725817187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692275802
@@ -419,9 +420,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damping: 0.3
+  damping: 0.6
+  longFallDamping: 0.2
   lookAhead: 4
   standardY: 4
+  fallingY: -15
   deadZoneX: 0.9
   deadZoneY: 0.9
   airSpeedDeadZoneX: 3
@@ -435,16 +438,19 @@ MonoBehaviour:
   minSize: 11.8
   momentumLookAhead: 8
   speedEffect: 2
+  longFallDistance: 8
   velocity: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: -10}
   trainOffset: {x: 0, y: 0, z: 0}
   camSize: {x: 0, y: 0, z: 0}
   sizeOffset: {x: 0, y: 0, z: 0}
+  targetY: 0
   groundedTimerRight: 0
   groundedTimerLeft: 0
   groundedTimerStop: 0
   playingRight: 0
   playingLeft: 0
+  longFall: 0
   locked: 0
 --- !u!1 &804677931
 GameObject:
@@ -729,10 +735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfb6cf41670f0f46858cc44c5f76697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesLockCamera: 1
+  doesLockCamera: 0
   onTriggerEnter: 1
   destination: {fileID: 193549078}
-  camDestination: {fileID: 193549078}
+  camDestination: {fileID: 1725817187}
 --- !u!61 &964929599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1662,6 +1668,37 @@ MonoBehaviour:
   text: {fileID: 1014760451}
   dialogueObj: {fileID: 1014760449}
   charTime: 0.08
+--- !u!1 &1725817186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1725817187}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1725817187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725817186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 193549078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1823361186
 PrefabInstance:
   m_ObjectHideFlags: 0
