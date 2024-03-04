@@ -359,11 +359,14 @@ MonoBehaviour:
   jumpCutOff: 2
   coyoteTime: 0.14
   jumpBuffer: 0.1
+  midAirJumps: 0
+  doubleJumpHeight: 3.27
   onGround: 0
   desiredJump: 0
   gravMultiplier: 0
   jumpSpeed: 0
   velocity: {x: 0, y: 0}
+  airJumpsRemaining: 0
   pressingJump: 0
   currentlyJumping: 0
   coyoteTimeCounter: 0

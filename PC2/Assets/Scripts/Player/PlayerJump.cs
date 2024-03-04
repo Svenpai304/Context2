@@ -17,12 +17,17 @@ public class PlayerJump : MonoBehaviour, IAbility
     public float coyoteTime; //How many seconds until you can't jump anymore when falling off a ledge
     public float jumpBuffer;
 
+    [Header("Double Jump Stats")]
+    public int midAirJumps;
+    public float doubleJumpHeight;
+
     [Header("Internal maths")]
     public bool onGround;
     public bool desiredJump;
     public float gravMultiplier;
     public float jumpSpeed;
     public Vector2 velocity;
+    public int airJumpsRemaining;
 
     [Header("Variable Jump Additions")]
     public bool pressingJump;
@@ -86,6 +91,7 @@ public class PlayerJump : MonoBehaviour, IAbility
         if (onGround)
         {
             currentlyJumping = false;
+            airJumpsRemaining = midAirJumps;
         }
         velocity = rb.velocity; //Reads the current speed we're shmoving at to make new calculations with
         if (desiredJump)
@@ -124,6 +130,15 @@ public class PlayerJump : MonoBehaviour, IAbility
             CalculateJump();
             velocity.y += jumpSpeed; //Swaps Y speed for the newly calculated one in CalculateJump()
         }
+        else if(airJumpsRemaining > 0)
+        {
+            airJumpsRemaining--;
+            desiredJump = false;
+            jumpBufferCounter = 0;
+            velocity.y = 0; //Very brute force fix for super jump I guess...
+            CalculateDoubleJump();
+            velocity.y += jumpSpeed; //Swaps Y speed for the newly calculated one in CalculateJump()
+        }
         if (jumpBuffer == 0)
         {
             desiredJump = false;
@@ -146,6 +161,18 @@ public class PlayerJump : MonoBehaviour, IAbility
     public void CalculateJump()
     {
         jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * rb.gravityScale * jumpHeight);
+        if (velocity.y > 0f)
+        {
+            jumpSpeed = Mathf.Max(jumpSpeed - velocity.y, 0f);
+        }
+        else if (velocity.y < 0f)
+        {
+            jumpSpeed += Mathf.Abs(rb.velocity.y);
+        }
+    }
+    public void CalculateDoubleJump()
+    {
+        jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * rb.gravityScale * doubleJumpHeight);
         if (velocity.y > 0f)
         {
             jumpSpeed = Mathf.Max(jumpSpeed - velocity.y, 0f);

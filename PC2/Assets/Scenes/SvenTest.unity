@@ -1707,6 +1707,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: midAirJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: doubleJumpHeight
+      value: 3.27
+      objectReference: {fileID: 0}
     - target: {fileID: 5392995803066290603, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: m_Offset.y
       value: -0.1
