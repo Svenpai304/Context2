@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        PlayerAbilityManager.instance.EnableAll();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        PlayerAbilityManager.instance.DisableAll();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
