@@ -1708,6 +1708,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
+      propertyPath: jumpCutOff
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: midAirJumps
       value: 1
       objectReference: {fileID: 0}
