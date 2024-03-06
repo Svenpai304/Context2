@@ -356,7 +356,7 @@ MonoBehaviour:
   timeToJumpApex: 0.5
   upwardMovementMultiplier: 1
   downwardMovementMultiplier: 1.05
-  jumpCutOff: 2
+  jumpCutOff: 1.05
   coyoteTime: 0.14
   jumpBuffer: 0.1
   midAirJumps: 0
