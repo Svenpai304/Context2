@@ -50,12 +50,12 @@ public class PlayerLookDown : MonoBehaviour, IAbility
 
     public void Disable()
     {
-        throw new System.NotImplementedException();
+        enabled = false;
     }
 
     public void Enable()
     {
-        throw new System.NotImplementedException();
+        enabled = true;
     }
 
     public void Interact(InputAction.CallbackContext c)
