@@ -39,6 +39,7 @@ public class CameraMovement : MonoBehaviour
     public float momentumLookAhead;
     public float speedEffect;
     public float longFallDistance;
+    [HideInInspector]public float additionalY;
 
     [Header("Internal Math")]
     public Vector3 velocity = Vector3.zero;
@@ -126,7 +127,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (!locked)
         {
-            Vector3 targetPosition = new Vector3(target.position.x + offset.x, targetY, -10);
+            Vector3 targetPosition = new Vector3(target.position.x + offset.x, targetY + additionalY, -10);
             float dampValue = damping;
             if(longFall)
             {
