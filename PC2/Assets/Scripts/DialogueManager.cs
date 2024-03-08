@@ -12,13 +12,18 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueActive = false;
 
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject root;
     [SerializeField] private GameObject dialogueObj;
+    [SerializeField] private GameObject textboxParent;
     [SerializeField] private float charTime;
+    [SerializeField] private float animTime;
 
     [SerializeField] private GameObject[] textboxes;
 
     private Line[] lines;
     private int index;
+
+    private TextboxAnimator textboxAnimator;
 
     private void Awake()
     {
@@ -41,6 +46,10 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 StopAllCoroutines();
+                if (textboxAnimator != null)
+                {
+                    textboxAnimator.SetSprite(0);
+                }
                 text.text = lines[index].text;
             }
         }
@@ -54,15 +63,16 @@ public class DialogueManager : MonoBehaviour
         index = 0;
         dialogueActive = true;
         StopAllCoroutines();
-        dialogueObj.SetActive(true);
+        root.SetActive(true);
         text.text = string.Empty;
+        SetTextbox(lines[index].textboxID);
         StartCoroutine(TypeLine());
     }
 
     public void EndDialogue()
     {
         StopAllCoroutines();
-        dialogueObj.SetActive(false);
+        root.SetActive(false);
         dialogueActive = false;
         PlayerAbilityManager.instance.EnableAll();
         PlayerAbilityManager.instance.inDialogue = false;
@@ -74,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         {
             index++;
             text.text = string.Empty;
+            SetTextbox(lines[index].textboxID);
             StartCoroutine(TypeLine());
         }
         else
@@ -84,16 +95,37 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        StartCoroutine(AnimateTextbox());
         foreach (char you in lines[index].text.ToCharArray())
         {
             text.text += you;
             yield return new WaitForSeconds(charTime);
         }
+        StopAllCoroutines();
+    }
+
+    IEnumerator AnimateTextbox()
+    {
+        Debug.Log("Animating textbox");
+        while (textboxAnimator != null)
+        {
+            textboxAnimator.NextSprite();
+            yield return new WaitForSeconds(animTime);
+        }
     }
 
     private void SetTextbox(int index)
     {
+        if (index >= lines.Length) { index = 0; }
+        if (textboxes[index].activeSelf) { return; }
 
+        foreach (GameObject go in textboxes)
+        {
+            go.SetActive(false);
+        }
+        textboxAnimator = textboxes[index].GetComponent<TextboxAnimator>();
+        textboxes[index].SetActive(true);
+        Debug.Log("Set textbox animator");
     }
 }
 

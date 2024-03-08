@@ -8,9 +8,9 @@ public class DialogueInteractive : MonoBehaviour
 
     public void Interact()
     {
-        /*if (lines != null)
+        if (lines != null)
         {
             DialogueManager.instance.StartDialogue(lines);
-        }*/
+        }
     }
 }
