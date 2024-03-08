@@ -15,7 +15,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueObj;
     [SerializeField] private float charTime;
 
-    private string[] lines;
+    [SerializeField] private GameObject[] textboxes;
+
+    private Line[] lines;
     private int index;
 
     private void Awake()
@@ -32,19 +34,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (c.started && dialogueActive)
         {
-            if (text.text == lines[index])
+            if (text.text == lines[index].text)
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                text.text = lines[index];
+                text.text = lines[index].text;
             }
         }
     }
 
-    public void StartDialogue(string[] _lines)
+    public void StartDialogue(Line[] _lines)
     {
         PlayerAbilityManager.instance.DisableAll();
         PlayerAbilityManager.instance.inDialogue = true;
@@ -82,10 +84,22 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char you in lines[index].ToCharArray())
+        foreach (char you in lines[index].text.ToCharArray())
         {
             text.text += you;
             yield return new WaitForSeconds(charTime);
         }
     }
+
+    private void SetTextbox(int index)
+    {
+
+    }
+}
+
+[Serializable]
+public class Line
+{
+    public string text;
+    public int textboxID;
 }

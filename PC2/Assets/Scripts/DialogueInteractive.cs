@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DialogueInteractive : MonoBehaviour
 {
-    [SerializeField] private string[] lines;
+    public Line[] lines;
 
     public void Interact()
     {
-        if (lines != null)
+        /*if (lines != null)
         {
             DialogueManager.instance.StartDialogue(lines);
-        }
+        }*/
     }
 }
