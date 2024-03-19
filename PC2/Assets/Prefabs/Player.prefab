@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4228927175889821310}
   - component: {fileID: 3052771501626868646}
   - component: {fileID: 4240844173490007656}
+  - component: {fileID: 1103075958290739202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,6 +298,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 225069cc-44b4-4957-b5df-fc80e1f3cd38
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1103075958290739202}
+        m_TargetAssemblyTypeName: MenoOpening, Assembly-CSharp
+        m_MethodName: PauseMenuInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 86092cf6-a00e-4163-af70-c767518ae7cb
+    m_ActionName: Player/PauseMenuInput[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1103075958290739202}
+        m_TargetAssemblyTypeName: MenoOpening, Assembly-CSharp
+        m_MethodName: EncyclopediaMenuInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ec469595-12fc-4ff1-8d01-bd02cde4fad9
+    m_ActionName: Player/EncyclopedieMenuInput[/Keyboard/tab,/XInputControllerWindows/select]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -439,3 +472,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   threshold: -0.5
   additionalY: -10
+  lookingDown: 0
+--- !u!114 &1103075958290739202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392995803066290614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ca01f53f848f64db9ca297f8ab60ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUIPrefab: {fileID: 4756540296164474998, guid: b5e2c1f205d350348a52bf9cd8818c55, type: 3}
+  pauseMenuUIInstance: {fileID: 0}
+  encyclopediaMenuUIPrefab: {fileID: 4113387622604867784, guid: fbae7d0013934cc4993ebc11b5834634, type: 3}
+  encyclopediaMenuUIInstance: {fileID: 0}
