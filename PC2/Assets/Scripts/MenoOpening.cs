@@ -8,10 +8,10 @@ public class MenoOpening : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUIPrefab;
-    public GameObject pauseMenuUIInstance;
-    public GameObject encyclopediaMenuUIPrefab;
-    public GameObject encyclopediaMenuUIInstance;
+    //public GameObject pauseMenuUIPrefab;
+    public GameObject pauseMenuUI;
+    //public GameObject encyclopediaMenuUIPrefab;
+    public GameObject encyclopediaMenuUI;
 
     // Update is called once per frame
     void Update()
@@ -54,16 +54,18 @@ public class MenoOpening : MonoBehaviour
     {
         if (ctx.performed)
         {
-            if (pauseMenuUIInstance != null)
+            if (pauseMenuUI.activeSelf)
             {
-                Destroy(pauseMenuUIInstance);
+                //Destroy(pauseMenuUIInstance);
+                pauseMenuUI.SetActive(false);
                 Resume();
             }
             else
             {
-                if (encyclopediaMenuUIInstance == null)
+                if (!encyclopediaMenuUI.activeSelf)
                 {
-                    pauseMenuUIInstance = Instantiate(pauseMenuUIPrefab, Vector3.zero, Quaternion.identity);
+                    //pauseMenuUIInstance = Instantiate(pauseMenuUIPrefab, Vector3.zero, Quaternion.identity);
+                    pauseMenuUI.SetActive(true);
                     Pause();
                 }
             }
@@ -73,16 +75,16 @@ public class MenoOpening : MonoBehaviour
     {
         if (ctx.performed)
         {
-            if (encyclopediaMenuUIInstance != null)
+            if (encyclopediaMenuUI.activeSelf)
             {
-                Destroy(encyclopediaMenuUIInstance);
+                encyclopediaMenuUI.SetActive(false);
                 Resume();
             }
             else
             {
-                if (pauseMenuUIInstance == null)
+                if (!pauseMenuUI.activeSelf)
                 {
-                    encyclopediaMenuUIInstance = Instantiate(encyclopediaMenuUIPrefab, Vector3.zero, Quaternion.identity);
+                    encyclopediaMenuUI.SetActive(true);
                     Pause();
                 }
             }
