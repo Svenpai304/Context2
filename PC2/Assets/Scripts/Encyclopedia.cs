@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,9 @@ public class Encyclopedia : MonoBehaviour
     [SerializeField] private List<EncyclopediaEntry> entries;
     [SerializeField] private TMP_Text title, info1, info2, source;
     [SerializeField] private Image img;
+    [SerializeField] private GameObject popUp;
+    [SerializeField] private TMP_Text popUpText;
+    [SerializeField] private float popUpTime;
     private void Awake()
     {
         foreach (var entry in entries)
@@ -39,7 +43,20 @@ public class Encyclopedia : MonoBehaviour
     public void SetButtonActive(int index)
     {
         if (index >= entries.Count || index < 0) { return; }
+        if (entries[index].button.activeSelf) { return; }
+
         entries[index].button.SetActive(true);
+        StartCoroutine(PopUpCoroutine(index));
+    }
+
+    private IEnumerator PopUpCoroutine(int index)
+    {
+        if (popUp == null) { yield break; }
+
+        popUpText.text = entries[index].title;
+        popUp.SetActive(true);
+        yield return new WaitForSeconds(popUpTime);
+        popUp.SetActive(false);
     }
 }
 
