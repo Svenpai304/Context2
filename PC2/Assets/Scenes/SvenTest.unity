@@ -1277,17 +1277,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1000712032 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4113387622604867784, guid: fbae7d0013934cc4993ebc11b5834634, type: 3}
-  m_PrefabInstance: {fileID: 785248707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1000712033 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6890981697043446351, guid: fbae7d0013934cc4993ebc11b5834634, type: 3}
   m_PrefabInstance: {fileID: 785248707}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000712032}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a90adabb2c5b459f8dcb621ad8f3d, type: 3}
@@ -1908,7 +1903,7 @@ PrefabInstance:
     - target: {fileID: 1103075958290739202, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: encyclopediaMenuUI
       value: 
-      objectReference: {fileID: 1000712032}
+      objectReference: {fileID: 1940098623}
     - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: jumpCutOff
       value: 1.05
@@ -2105,6 +2100,11 @@ Transform:
   - {fileID: 899472006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1940098623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 275661873928650490, guid: fbae7d0013934cc4993ebc11b5834634, type: 3}
+  m_PrefabInstance: {fileID: 785248707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2064887923
 GameObject:
   m_ObjectHideFlags: 0
