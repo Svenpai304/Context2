@@ -52,6 +52,7 @@ public class MenoOpening : MonoBehaviour
 
     public void PauseMenuInput(InputAction.CallbackContext ctx)
     {
+        if (PlayerAbilityManager.instance.inDialogue) { return; }
         if (ctx.performed)
         {
             if (pauseMenuUI.activeSelf)
@@ -73,6 +74,7 @@ public class MenoOpening : MonoBehaviour
     }
     public void EncyclopediaMenuInput(InputAction.CallbackContext ctx)
     {
+        if(PlayerAbilityManager.instance.inDialogue) { return; }
         if (ctx.performed)
         {
             if (encyclopediaMenuUI.activeSelf)
@@ -84,6 +86,7 @@ public class MenoOpening : MonoBehaviour
             {
                 if (!pauseMenuUI.activeSelf)
                 {
+                    Debug.Log("Activating encyclopedia");
                     encyclopediaMenuUI.SetActive(true);
                     Pause();
                 }
