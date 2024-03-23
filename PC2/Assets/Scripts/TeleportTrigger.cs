@@ -8,6 +8,7 @@ public class TeleportTrigger : MonoBehaviour
     [SerializeField] private bool onTriggerEnter;
     [SerializeField] private Transform destination;
     [SerializeField] private Transform camDestination;
+    [SerializeField] private float camSize;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +32,12 @@ public class TeleportTrigger : MonoBehaviour
         else
         {
             cm.Unlock(new Vector3(camDestination.position.x, camDestination.position.y, cm.transform.position.z));
+        }
+        if (camSize > 0)
+        {
+            Camera.main.orthographicSize = camSize;
+            cm.maxSize = camSize;
+            cm.minSize = camSize;
         }
         cm.target.position = destination.position;
     }
