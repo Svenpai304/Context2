@@ -1161,10 +1161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfb6cf41670f0f46858cc44c5f76697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesLockCamera: 0
+  doesLockCamera: 1
   onTriggerEnter: 1
   destination: {fileID: 193549078}
   camDestination: {fileID: 1725817187}
+  camSize: 15
 --- !u!61 &964929599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1514,6 +1515,7 @@ MonoBehaviour:
   onTriggerEnter: 0
   destination: {fileID: 1245388375}
   camDestination: {fileID: 1245388375}
+  camSize: 11.8
 --- !u!212 &1175660186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1906,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 1940098623}
     - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: jumpCutOff
-      value: 1.05
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2215816771910097580, guid: 3477b4bef3b75ba4a88f7d8e20002a17, type: 3}
       propertyPath: midAirJumps

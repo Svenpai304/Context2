@@ -122,6 +122,11 @@ public class PlayerJump : MonoBehaviour, IAbility
 
     private void PerformJump()
     {
+        if (gravMultiplier == jumpCutOff)
+        {
+            gravMultiplier = downwardMovementMultiplier;
+            CalculateGravityScale();
+        }
         if ((onGround && velocity.y > -0.1) || (coyoteTimeCounter > 0.03f && coyoteTimeCounter < coyoteTime)) //If grounded or if you still have coyote time
         {
             desiredJump = false;
@@ -130,7 +135,7 @@ public class PlayerJump : MonoBehaviour, IAbility
             CalculateJump();
             velocity.y += jumpSpeed; //Swaps Y speed for the newly calculated one in CalculateJump()
         }
-        else if(airJumpsRemaining > 0)
+        else if (airJumpsRemaining > 0)
         {
             airJumpsRemaining--;
             desiredJump = false;

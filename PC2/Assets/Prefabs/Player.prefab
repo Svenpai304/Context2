@@ -390,7 +390,7 @@ MonoBehaviour:
   timeToJumpApex: 0.5
   upwardMovementMultiplier: 1
   downwardMovementMultiplier: 1.05
-  jumpCutOff: 1.05
+  jumpCutOff: 2
   coyoteTime: 0.14
   jumpBuffer: 0.1
   midAirJumps: 0
@@ -485,7 +485,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ca01f53f848f64db9ca297f8ab60ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUIPrefab: {fileID: 4756540296164474998, guid: b5e2c1f205d350348a52bf9cd8818c55, type: 3}
-  pauseMenuUIInstance: {fileID: 0}
-  encyclopediaMenuUIPrefab: {fileID: 4113387622604867784, guid: fbae7d0013934cc4993ebc11b5834634, type: 3}
-  encyclopediaMenuUIInstance: {fileID: 0}
+  pauseMenuUI: {fileID: 0}
+  encyclopediaMenuUI: {fileID: 0}
