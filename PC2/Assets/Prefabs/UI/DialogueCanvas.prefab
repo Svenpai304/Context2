@@ -703,6 +703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueActive: 0
+  highlightPrefab: {fileID: 4323985865647071666, guid: 875b76a741decc84cbb161680cc43d99, type: 3}
+  alertPrefab: {fileID: 0}
   text: {fileID: 998669706398312653}
   root: {fileID: 4153082678295020962}
   dialogueObj: {fileID: 3581698139661635427}

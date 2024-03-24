@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
     public bool dialogueActive = false;
+    public GameObject highlightPrefab;
+    public GameObject alertPrefab;
 
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject root;
@@ -19,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float animTime;
 
     [SerializeField] private GameObject[] textboxes;
+
 
     private Line[] lines;
     private int index;
