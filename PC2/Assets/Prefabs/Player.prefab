@@ -470,9 +470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb3dfb6b0a4982448e95418aed41556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: -0.5
+  holdTime: 1.5
+  inputThreshold: -0.5
   additionalY: -10
-  lookingDown: 0
 --- !u!114 &1103075958290739202
 MonoBehaviour:
   m_ObjectHideFlags: 0

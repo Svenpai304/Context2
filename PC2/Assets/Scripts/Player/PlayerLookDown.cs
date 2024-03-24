@@ -6,9 +6,13 @@ using UnityEngine.InputSystem;
 public class PlayerLookDown : MonoBehaviour, IAbility
 {
 
-    [SerializeField] private float threshold;
+    [SerializeField] private float holdTime;
+    [SerializeField] private float inputThreshold;
     [SerializeField] private float additionalY;
-    [SerializeField] private bool lookingDown;
+
+    private bool holdingDown;
+    private float heldTime;
+    private bool lookingDown;
     private CameraMovement cam;
 
     private void Start()
@@ -16,16 +20,36 @@ public class PlayerLookDown : MonoBehaviour, IAbility
         cam = Camera.main.GetComponent<CameraMovement>();
     }
 
-    public void Move(InputAction.CallbackContext c)
+    private void FixedUpdate()
     {
-        Vector2 move = c.ReadValue<Vector2>();
-        if(move.y <= threshold)
+        if(holdingDown)
+        {
+            heldTime += Time.deltaTime;
+        }
+        else
+        {
+            heldTime = 0;
+        }
+        if(heldTime >= holdTime)
         {
             LookDown();
         }
         else
         {
             StopLookDown();
+        }
+    }
+
+    public void Move(InputAction.CallbackContext c)
+    {
+        Vector2 move = c.ReadValue<Vector2>();
+        if(move.y <= inputThreshold)
+        {
+            holdingDown = true;
+        }
+        else
+        {
+            holdingDown = false;
         }
     }
 
