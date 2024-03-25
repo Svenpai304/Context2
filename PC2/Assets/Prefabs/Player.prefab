@@ -395,7 +395,11 @@ MonoBehaviour:
   jumpBuffer: 0.1
   midAirJumps: 0
   doubleJumpHeight: 3.27
+  glideEnabled: 0
+  glideGrav: 0.3
+  glideMaxYVel: -3
   onGround: 0
+  gliding: 0
   desiredJump: 0
   gravMultiplier: 0
   jumpSpeed: 0

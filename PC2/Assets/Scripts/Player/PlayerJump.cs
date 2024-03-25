@@ -21,8 +21,14 @@ public class PlayerJump : MonoBehaviour, IAbility
     public int midAirJumps;
     public float doubleJumpHeight;
 
+    [Header("Glide Stats")]
+    public bool glideEnabled;
+    public float glideGrav;
+    public float glideMaxYVel;
+
     [Header("Internal maths")]
     public bool onGround;
+    public bool gliding;
     public bool desiredJump;
     public float gravMultiplier;
     public float jumpSpeed;
@@ -83,6 +89,15 @@ public class PlayerJump : MonoBehaviour, IAbility
         {
             coyoteTimeCounter = 0;
         }
+
+        if (glideEnabled && velocity.y < 0 && pressingJump && !gliding)
+        {
+            gliding = true;
+        }
+        if (gliding && (onGround || !pressingJump))
+        {
+            gliding = false;
+        }
         CalculateGravityScale(); //Changes gravity scale making you fall at different speeds
     }
 
@@ -100,6 +115,10 @@ public class PlayerJump : MonoBehaviour, IAbility
             rb.velocity = velocity; //Applies new Y speed as well as the X that was read earlier
             currentlyJumping = true; //Tells the code we're jumping now. Used for variable height
             return;
+        }
+        if (gliding && rb.velocity.y <= glideMaxYVel)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, glideMaxYVel);
         }
         //if (!onGround && rb.velocity.y > 0.01f) //DID ADDING A GROUND CHECK HERE FIX IT??????
         //{
@@ -238,7 +257,14 @@ public class PlayerJump : MonoBehaviour, IAbility
             else
             {
                 //Otherwise, apply the downward gravity multiplier as Kit comes back to Earth
-                gravMultiplier = downwardMovementMultiplier;
+                if (gliding)
+                {
+                    gravMultiplier = glideGrav;
+                }
+                else
+                {
+                    gravMultiplier = downwardMovementMultiplier;
+                }
             }
 
         }
