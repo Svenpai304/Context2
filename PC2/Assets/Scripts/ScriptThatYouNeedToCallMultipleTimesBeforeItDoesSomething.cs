@@ -7,11 +7,15 @@ public class ScriptThatYouNeedToCallMultipleTimesBeforeItDoesSomething : MonoBeh
 {
     [SerializeField] private int threshold;
     [SerializeField] private UnityEvent OnTrigger;
+    private List<int> previousActivators = new();
 
     private int counter = 0;
-    public void Activate()
+    public void Activate(int id)
     {
+        if(previousActivators.Contains(id)) { return; }
+
         counter++;
+        previousActivators.Add(id);
         if(counter == threshold)
         {
             OnTrigger?.Invoke();
