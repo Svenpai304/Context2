@@ -39,7 +39,7 @@ public class CameraMovement : MonoBehaviour
     public float momentumLookAhead;
     public float speedEffect;
     public float longFallDistance;
-    [HideInInspector]public float additionalY;
+    [HideInInspector] public float additionalY;
 
     [Header("Internal Math")]
     public Vector3 velocity = Vector3.zero;
@@ -129,13 +129,19 @@ public class CameraMovement : MonoBehaviour
         {
             Vector3 targetPosition = new Vector3(target.position.x + offset.x, targetY + additionalY, -10);
             float dampValue = damping;
-            if(longFall)
+            if (longFall)
             {
                 dampValue = longFallDamping;
             }
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, dampValue);
         }
 
+        float Ydistance = target.position.y + standardY - transform.position.y;
+        if (-Ydistance > longFallDistance || longFall)
+        {
+            targetY = target.position.y + fallingY;
+            longFall = true;
+        }
         if (playerMove.onGround)
         {
             longFall = false;
@@ -190,15 +196,6 @@ public class CameraMovement : MonoBehaviour
                 {
                     groundedTimerStop += Time.deltaTime;
                 }
-            }
-        }
-        float Ydistance = target.position.y + standardY - transform.position.y;
-        if (Mathf.Abs(Ydistance) > longFallDistance || longFall)
-        {
-            if (Ydistance < 0)
-            {
-                targetY = target.position.y + fallingY;
-                longFall = true;
             }
         }
         if (playerMove.transform.parent != null)
