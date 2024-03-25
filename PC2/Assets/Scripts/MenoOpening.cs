@@ -22,7 +22,7 @@ public class MenoOpening : MonoBehaviour
     public void Resume()
     {
         PlayerAbilityManager.instance.EnableAll();
-        //pauseMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
         
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -53,8 +53,9 @@ public class MenoOpening : MonoBehaviour
     public void PauseMenuInput(InputAction.CallbackContext ctx)
     {
         if (PlayerAbilityManager.instance.inDialogue) { return; }
-        if (ctx.performed)
+        if (ctx.started)
         {
+                Debug.Log("Turning off pause menu, right?");
             if (pauseMenuUI.activeSelf)
             {
                 //Destroy(pauseMenuUIInstance);
@@ -75,7 +76,7 @@ public class MenoOpening : MonoBehaviour
     public void EncyclopediaMenuInput(InputAction.CallbackContext ctx)
     {
         if(PlayerAbilityManager.instance.inDialogue) { return; }
-        if (ctx.performed)
+        if (ctx.started)
         {
             if (encyclopediaMenuUI.activeSelf)
             {
@@ -86,7 +87,6 @@ public class MenoOpening : MonoBehaviour
             {
                 if (!pauseMenuUI.activeSelf)
                 {
-                    Debug.Log("Activating encyclopedia");
                     encyclopediaMenuUI.SetActive(true);
                     Pause();
                 }
