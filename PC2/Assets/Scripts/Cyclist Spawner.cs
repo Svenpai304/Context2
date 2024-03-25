@@ -7,10 +7,16 @@ public class CyclistSpawner : MonoBehaviour
     [Header("Prefabs")]
     public GameObject cyclist1Prefab; //Single 1
     public GameObject cyclist2Prefab; //Single 2
-    //public GameObject cyclist3Prefab; //Group 1
+    public GameObject cyclist3Prefab; //Single 3
+    public GameObject cyclist4Prefab; //Single 4
+    public GameObject cyclist5Prefab; //Single 5
+    public GameObject cyclist6Prefab; //Single 6
     public GameObject cyclist1Instance;
     public GameObject cyclist2Instance;
-    //public GameObject cyclist3Instance;
+    public GameObject cyclist3Instance;
+    public GameObject cyclist4Instance;
+    public GameObject cyclist5Instance;
+    public GameObject cyclist6Instance;
 
     [Header("Variables")]
     public float minWait;
@@ -75,27 +81,56 @@ public class CyclistSpawner : MonoBehaviour
                 cyclist.speed = chosenSpeed;
             }
         }
-        else if (chosenPrefabNumber == 2)
+        else if (chosenPrefabNumber == 3)
         {
-            cyclist1Instance = Instantiate(cyclist1Prefab, transform.position, Quaternion.identity);
-            cyclist2Instance = Instantiate(cyclist2Prefab, (transform.position + new Vector3(2, 0, 0)), Quaternion.identity);
-            Cyclist cyclist1 = cyclist1Instance.GetComponent<Cyclist>();
+            cyclist3Instance = Instantiate(cyclist3Prefab, transform.position, Quaternion.identity);
+            Cyclist cyclist = cyclist3Instance.GetComponent<Cyclist>();
             if (goLeft)
             {
-                cyclist1.speed = -chosenSpeed;
+                cyclist.speed = -chosenSpeed;
             }
             else
             {
-                cyclist1.speed = chosenSpeed;
+                cyclist.speed = chosenSpeed;
             }
-            Cyclist cyclist2 = cyclist2Instance.GetComponent<Cyclist>();
+        }
+        else if (chosenPrefabNumber == 4)
+        {
+            cyclist4Instance = Instantiate(cyclist4Prefab, transform.position, Quaternion.identity);
+            Cyclist cyclist = cyclist4Instance.GetComponent<Cyclist>();
             if (goLeft)
             {
-                cyclist2.speed = -chosenSpeed;
+                cyclist.speed = -chosenSpeed;
             }
             else
             {
-                cyclist2.speed = chosenSpeed;
+                cyclist.speed = chosenSpeed;
+            }
+        }
+        else if (chosenPrefabNumber == 5)
+        {
+            cyclist5Instance = Instantiate(cyclist5Prefab, transform.position, Quaternion.identity);
+            Cyclist cyclist = cyclist5Instance.GetComponent<Cyclist>();
+            if (goLeft)
+            {
+                cyclist.speed = -chosenSpeed;
+            }
+            else
+            {
+                cyclist.speed = chosenSpeed;
+            }
+        }
+        else if (chosenPrefabNumber ==63)
+        {
+            cyclist6Instance = Instantiate(cyclist6Prefab, transform.position, Quaternion.identity);
+            Cyclist cyclist = cyclist6Instance.GetComponent<Cyclist>();
+            if (goLeft)
+            {
+                cyclist.speed = -chosenSpeed;
+            }
+            else
+            {
+                cyclist.speed = chosenSpeed;
             }
         }
         chosenPrefabNumber = Random.Range(1, maxPrefabNumber);
