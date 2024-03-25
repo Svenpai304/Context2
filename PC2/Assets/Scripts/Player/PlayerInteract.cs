@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour, IAbility
     [SerializeField] private LayerMask interactMask;
 
     private IInteractive currentInteractive;
+    public AudioSource popSound;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class PlayerInteract : MonoBehaviour, IAbility
             if (currentInteractive != null)
             {
                 currentInteractive.Highlight();
+                popSound.Play();
             }
         }
     }

@@ -43,6 +43,11 @@ public class PlayerMovement : MonoBehaviour, IAbility
     public LayerMask wallMask;
     public float aboveGroundDistance; //Moves the raycasts used for wall detection off the floor
 
+    [Header("Sounds")]
+    public AudioSource skidSound;
+    public bool playSkid;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -285,66 +290,80 @@ public class PlayerMovement : MonoBehaviour, IAbility
     private void Animations()
     {
 
-            anim.SetBool("Slide", false);
-            if (onGround && velocity.x < 0) //If we're moving on the ground
+        anim.SetBool("Slide", false);
+        if (onGround && velocity.x < 0) //If we're moving on the ground
+        {
+            anim.SetBool("Stand", false);
+            sprite.flipX = true; //Flip depending on direction
+            if (directionX == Mathf.Sign(velocity.x))
             {
-                anim.SetBool("Stand", false);
-                sprite.flipX = true; //Flip depending on direction
-                if (directionX == Mathf.Sign(velocity.x))
-                {
-                    anim.SetBool("Skid", false);
-                    anim.SetBool("Run", true); //If not skidding run
-                }
-                else
-                {
-                    anim.SetBool("Skid", true);
-                    anim.SetBool("Run", false);
-                }
-            }
-            else if (onGround && velocity.x > 0)
-            {
-                anim.SetBool("Stand", false);
-                sprite.flipX = false;
-                anim.SetBool("Run", true);
-                if (directionX == Mathf.Sign(velocity.x))
-                {
-                    anim.SetBool("Skid", false);
-                    anim.SetBool("Run", true); //If not skidding run
-                }
-                else
-                {
-                    anim.SetBool("Skid", true);
-                    anim.SetBool("Run", false);
-                }
+                anim.SetBool("Skid", false);
+                anim.SetBool("Run", true); //If not skidding run
+                playSkid = true;
             }
             else
             {
-                anim.SetBool("Skid", false);
+                anim.SetBool("Skid", true);
+                if (playSkid)
+                {
+                    skidSound.Play();
+                    playSkid = false;
+                }
                 anim.SetBool("Run", false);
-
-                anim.SetBool("Stand", true);
             }
-            if (!onGround)
+        }
+        else if (onGround && velocity.x > 0)
+        {
+            anim.SetBool("Stand", false);
+            sprite.flipX = false;
+            anim.SetBool("Run", true);
+            if (directionX == Mathf.Sign(velocity.x))
             {
-                anim.SetBool("Stand", false);
-                anim.SetBool("Run", false);
                 anim.SetBool("Skid", false);
-                if (Mathf.Sign(velocity.y) == 1)
+                anim.SetBool("Run", true); //If not skidding run
+                playSkid = true;
+            }
+            else
+            {
+                anim.SetBool("Skid", true);
+                if (playSkid)
                 {
-                    anim.SetBool("Jump", true);
-                    anim.SetBool("Fall", false);
+                    skidSound.Play();
+                    playSkid = false;
                 }
-                else
-                {
-                    anim.SetBool("Jump", false);
-                    anim.SetBool("Fall", true);
-                }
+                anim.SetBool("Run", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("Skid", false);
+            anim.SetBool("Run", false);
+
+            anim.SetBool("Stand", true);
+            playSkid = true;
+        }
+        if (!onGround)
+        {
+            playSkid = true;
+            anim.SetBool("Stand", false);
+            anim.SetBool("Run", false);
+            anim.SetBool("Skid", false);
+            if (Mathf.Sign(velocity.y) == 1)
+            {
+                anim.SetBool("Jump", true);
+                anim.SetBool("Fall", false);
             }
             else
             {
                 anim.SetBool("Jump", false);
-                anim.SetBool("Fall", false);
+                anim.SetBool("Fall", true);
             }
-        
+        }
+        else
+        {
+            anim.SetBool("Jump", false);
+            anim.SetBool("Fall", false);
+        }
+
     }
 }

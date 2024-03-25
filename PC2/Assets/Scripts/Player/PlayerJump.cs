@@ -48,6 +48,9 @@ public class PlayerJump : MonoBehaviour, IAbility
     public float jumpBufferCounter;
     //JUMPBUFFER
 
+    [Header("Audio")]
+    public AudioSource jumpSound;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -152,6 +155,7 @@ public class PlayerJump : MonoBehaviour, IAbility
             jumpBufferCounter = 0;
             velocity.y = 0; //Very brute force fix for super jump I guess...
             CalculateJump();
+            jumpSound.Play();
             velocity.y += jumpSpeed; //Swaps Y speed for the newly calculated one in CalculateJump()
         }
         else if (airJumpsRemaining > 0)
@@ -161,6 +165,7 @@ public class PlayerJump : MonoBehaviour, IAbility
             jumpBufferCounter = 0;
             velocity.y = 0; //Very brute force fix for super jump I guess...
             CalculateDoubleJump();
+            jumpSound.Play();
             velocity.y += jumpSpeed; //Swaps Y speed for the newly calculated one in CalculateJump()
         }
         if (jumpBuffer == 0)
