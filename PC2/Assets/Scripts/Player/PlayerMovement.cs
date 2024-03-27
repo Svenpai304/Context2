@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, IAbility
     BoxCollider2D coll;
     SpriteRenderer sprite;
     Animator anim;
+    PlayerJump pj;
 
     [Header("Movement Stats")]
     public float maxSpeed; //0 to 20 DETERMINES HOW FAST YOU CAN GO IN TOTAL
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour, IAbility
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        pj = GetComponent<PlayerJump>();
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -358,11 +360,23 @@ public class PlayerMovement : MonoBehaviour, IAbility
                 anim.SetBool("Jump", false);
                 anim.SetBool("Fall", true);
             }
+            
         }
         else
         {
             anim.SetBool("Jump", false);
             anim.SetBool("Fall", false);
+            anim.SetBool("Glide", false);
+        }
+        if (pj.gliding)
+        {
+            anim.SetBool("Jump", false);
+            anim.SetBool("Fall", false);
+            anim.SetBool("Glide", true);
+        }
+        else
+        {
+            anim.SetBool("Glide", false);
         }
 
     }
