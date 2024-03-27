@@ -65,27 +65,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
-    WWWWWWWWWWWWWWWWWWWWWWWWWWW'
+  m_text: "Energiearmoede ontstaat wanneer huishoudens geen goede toegang hebben
+    tot energievoorzieningen in huis door:\nde hoge energieprijs,  de slechte kwaliteit
+    van het huis, en  beperkte financi\xEBle middelen om deel te nemen aan de energietransitie.\nTNO
+    schat dat 750.000 huishoudens in Nederland momenteel of binnenkort hun energierekening
+    niet kunnen betalen. Deze huishoudens wonen vaak in slecht ge\xEFsoleerde huizen,
+    wat ook nog eens kan leiden tot schimmel en gezondheidsproblemen door de kou.
+    Ze moeten kiezen tussen een warme maaltijd of een warme kamer. Zonder de financi\xEBle
+    middelen om verbeteringen aan te brengen, blijft deze schrijnende situatie voortduren. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -469,8 +456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -452.6}
-  m_SizeDelta: {x: 924.02, y: 60.972}
+  m_AnchoredPosition: {x: 17.516296, y: -452.6}
+  m_SizeDelta: {x: 873.0526, y: 60.972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3984192138788743989
 CanvasRenderer:
@@ -527,10 +514,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 36.8
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -659,7 +646,7 @@ GameObject:
   - component: {fileID: 6981139607857735690}
   - component: {fileID: 9001280263757984849}
   m_Layer: 5
-  m_Name: Solar Power
+  m_Name: Energie coop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Net Congestion
+  m_text: Isoleren
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1245,7 +1232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yo mama so fat, she
+  m_text: Klimaatverandering
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1506,46 +1493,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entries:
-  - title: Solar Power
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
-    button: {fileID: 3081682458990207536}
-  - title: Misinformation
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
-    button: {fileID: 6845130735242736098}
-  - title: Energy Co-op
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
+  - title: "Energie co\xF6p"
+    info1: "Een energieco\xF6peratie is een groep mensen die samen hun dorp of stad
+      groener willen maken. Ze willen zelf kiezen waar hun energie vandaan komt en
+      niet afhankelijk zijn van grote bedrijven. Dit kan bijvoorbeeld zijn door samen
+      zonnepanelen te installeren of windmolens te bouwen. Het belang van co\xF6peratief
+      denken binnen een energieco\xF6peratie is dat alle leden samen beslissingen
+      nemen en samen profiteren van de opbrengsten. Zo kan de winst van energieprojecten
+      ge\xEFnvesteerd worden om de buurt te verbeteren, bijvoorbeeld door het zwembad
+      in de buurt op te knappen."
+    info2: "Ik werk zelf aan een energie co\xF6p. Ik hoop zo veel mogelijk mensen
+      te helpen mee te doen aan de energietransitie!"
+    source: https://www.hier.nu/impact
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 6072300496560067019}
-  - title: Net Congestion
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
+  - title: Zonnepanelen
+    info1: "Energiearmoede ontstaat wanneer huishoudens geen goede toegang hebben
+      tot energievoorzieningen in huis door: de hoge energieprijs,  de slechte kwaliteit
+      van het huis, en  beperkte financi\xEBle middelen om deel te nemen aan de energietransitie.
+      TNO schat dat 750.000 huishoudens in Nederland momenteel of binnenkort hun
+      energierekening niet kunnen betalen. Deze huishoudens wonen vaak in slecht
+      ge\xEFsoleerde huizen, wat ook nog eens kan leiden tot schimmel en gezondheidsproblemen
+      door de kou. Ze moeten kiezen tussen een warme maaltijd of een warme kamer.
+      Zonder de financi\xEBle middelen om verbeteringen aan te brengen, blijft deze
+      schrijnende situatie voortduren."
+    info2: Standaard zonnepanelen hebben een vermogen van rond de 370Wp. Een gemiddeld
+      zonnepaneel wekt dus zo'n 315kWh per jaar.
+    source: 'natuurenmilieu.nl: Leg zonnepanelen op het dak'
+    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    button: {fileID: 3081682458990207536}
+  - title: Energie armoede
+    info1: "Energiearmoede ontstaat wanneer huishoudens geen goede toegang hebben
+      tot energievoorzieningen in huis, door:  de hoge energieprijs,  de slechte
+      kwaliteit van het huis, en  beperkte financi\xEBle middelen om deel te nemen
+      aan de energietransitie.   TNO schat dat 750.000 huishoudens in Nederland momenteel
+      of binnenkort hun energierekening niet kunnen betalen. Deze huishoudens wonen
+      vaak in slecht ge\xEFsoleerde huizen, wat ook nog eens kan leiden tot schimmel
+      en gezondheidsproblemen door de kou. Ze moeten kiezen tussen een warme maaltijd
+      of een warme kamer. Zonder de financi\xEBle middelen om verbeteringen aan te
+      brengen, blijft deze schrijnende situatie voortduren. "
+    info2: Energie co-ops proberen dit probleem bij hun energietransitie doelen aan
+      te pakken. Iedereen moet kunnen meedoen.
+    source: 'academie.energiesamen.nu: Energiearmoede verminderen'
+    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    button: {fileID: 6845130735242736098}
+  - title: Isoleren
+    info1: "Als je je huis verwarmt met de verwarming, gebruik je gas en dat kost
+      geld. Als de warme lucht dan ontsnapt door gaten en kieren, verbruik je nog
+      meer. Maar met tochtstrips kun je wel 270 euro per jaar besparen op gas kosten!
+      Ga op kierenjacht in je huis en check bij ramen, deuren, gaten in de muur en
+      andere plekken waar warme lucht kan ontsnappen. Zo houd je de warmte binnen
+      en je energierekening laag!   Ook radiatorfolie helpt: je kan wel tot \u20AC40
+      tot \u20AC130 per jaar besparen. Het houdt de warmte van de radiator [de verwarming]
+      beter vast, zodat je minder energie verbruikt. Het is daarbij super makkelijk
+      te bevestigen en je ziet de folie niet als je hem achter de radiator plaatst.
+      Je kamers worden sneller warm en langer lekker warm!"
+    info2: 
+    source: 'regionaalenergieloket.nl: Radiatorfolie, radar.avrotros.nl: Besparen
+      op je energierekening met tochtstrips?'
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 5987287760814726582}
-  - title: Wind power
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
+  - title: Fossiele brandstoffen
+    info1: 'Fossiele brandstoffen, zoals aardolie en aardgas, bevatten koolstof die
+      miljoenen jaren geleden door planten is vastgelegd. Bij verbranding van deze
+      stoffen voor onze energie komen deze koolstofverbindingen vrij als extra CO2
+      in de atmosfeer. Dit draagt bij aan klimaatverandering. In Nederland komt zo''n
+      85 procent van onze energie uit fossiele brandstoffen, die niet hernieuwbaar
+      zijn en ook vervuiling veroorzaken.   Aardgas: Wereldwijd zullen de momenteel
+      beschikbare bronnen naar schatting binnen ongeveer zestig jaar zijn uitgeput.
+      In Groningen veroorzaakt de aardgaswinning aardbevingen, dus wordt besloten
+      om het daar te stoppen.   '
+    info2: 'Aardolie: Het gebruik van aardolie maakt Nederland afhankelijk van andere
+      landen. De voorraden raken binnen veertig jaar op, wat tekorten en hogere prijzen
+      kan veroorzaken. Ongelukken met olietankers en pijpleidingen zijn schadelijk
+      voor het milieu. '
+    source: 'milieucentraal.nl: Kolen, olie en gas'
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 4974786806936660336}
-  - title: Yo mama
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
+  - title: Klimaatverandering
+    info1: Het klimaat is eigenlijk het gemiddelde weer over zo'n 30 jaar. Klimaatverandering
+      betekent dus dat het gemiddeld warmer, kouder, droger of natter wordt. Het
+      klimaat op Aarde is altijd al veranderd, maar nu wordt het vooral door mensen
+      veroorzaakt en gaat het sneller dan ooit. Deze veranderingen kunnen binnen
+      deze eeuw het leven op Aarde behoorlijk verstoren en veel schade aanrichten
+      aan de natuur, de economie en dus aan mensen
+    info2: 
+    source: 'urgenda.nl: Wat is klimaatverandering?'
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 7474604269619716822}
-  - title: needed
-    info1: Pretty cool right!!
-    info2: Photovoltaic n shit
-    source: 'Bron: mijn moeder'
+  - title: Maatschappelijk draagvlak
+    info1: 'Stel je voor dat je in een stad woont en je hoort dat er plannen zijn
+      om windmolens te bouwen of een groot zonnepark aan te leggen in de buurt. Dat
+      kan best spannend zijn, toch? Mensen zijn gewend aan hun vertrouwde omgeving
+      en veranderingen kunnen lastig zijn. Maatschappelijk draagvlak betekent dat
+      de meeste mensen in de samenleving het eens zijn met een verandering of beslissing.
+      Als mensen betrokken zijn bij de beslissingen en mee kunnen denken, voelen
+      ze zich meer betrokken bij de veranderingen. Mensen kunnen dan meepraten en
+      ervoor zorgen dat de opbrengsten van energieprojecten ook weer terugvloeien
+      naar de lokale gemeenschap. '
+    info2: "Dit kan helpen om maatschappelijk draagvlak te cre\xEBren. Op die manier
+      wordt de energietransitie niet alleen goed voor het klimaat, maar ook voor
+      de mensen die erin wonen."
+    source: 'reswestoverijssel.nl: Wat is draagvlak?'
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 9001032862932379092}
   title: {fileID: 4199837121000953575}
@@ -1621,7 +1670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: needed multiple menu
+  m_text: Maatschappelijk draagvlak
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1705,7 +1754,7 @@ GameObject:
   - component: {fileID: 7037588262624034941}
   - component: {fileID: 3414280183428517560}
   m_Layer: 5
-  m_Name: Wind Power
+  m_Name: Fossiele brandstoffen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,7 +2010,7 @@ GameObject:
   - component: {fileID: 4474000839238350787}
   - component: {fileID: 4606964530207773127}
   m_Layer: 5
-  m_Name: Net Congestion
+  m_Name: Isoleren
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,7 +2266,7 @@ GameObject:
   - component: {fileID: 4781178328743081249}
   - component: {fileID: 186118196043033365}
   m_Layer: 5
-  m_Name: Energy Co-op
+  m_Name: Energie armoede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2657,7 +2706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Solar power
+  m_text: "Energie co\xF6p"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2741,7 +2790,7 @@ GameObject:
   - component: {fileID: 9001242057206567011}
   - component: {fileID: 5037841701971341556}
   m_Layer: 5
-  m_Name: Misinformation
+  m_Name: Zonnepanelen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3047,7 +3096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misinformation
+  m_text: Zonnepanelen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3131,7 +3180,7 @@ GameObject:
   - component: {fileID: 2296440070410313274}
   - component: {fileID: 4016301588797515688}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Klimaatverandering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3437,7 +3486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wind power
+  m_text: Fossiele brandstoffen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3903,7 +3952,7 @@ GameObject:
   - component: {fileID: 4758302647497464709}
   - component: {fileID: 2959736544094363939}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Maatschappelijk draagvlak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4209,7 +4258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Energy Co-op
+  m_text: Energie armoede
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
