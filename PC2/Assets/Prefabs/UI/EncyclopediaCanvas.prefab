@@ -65,13 +65,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Een energieco\xF6peratie is een co\xF6peratie die zich richt op het bevorderen
-    van een voor iedereen toegankelijke, democratisch gecontroleerde, en duurzame
-    energievoorziening. Dergelijke co\xF6peraties zijn in veel landen omstreeks 1985
-    of later opgericht. In Duitsland en de Verenigde Staten bestaan energieco\xF6peraties
-    al vanaf ongeveer 1935, maar deze richten zich niet exclusief op duurzame energie.
-    Ook in Nederland bestonden aan het begin van de 20e eeuw dergelijke co\xF6peraties
-    maar deze zijn alle verdwenen.\nWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+  m_text: 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWWWWW'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -486,7 +500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bron: nl.wikipedia.org/wiki/Energieco%C3%B6peratie'
+  m_text: WWWWWWWWWWWWWWWWWWWWWWWW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -951,10 +965,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hoewel er eerder al soortgelijke organisaties bestonden, ontstonden sinds
-    ongeveer 1980, maar vooral na 2000, in Nederland en Belgi\xEB steeds meer samenwerkingsverbanden
-    van burgers, soms samen met bedrijven en gemeenten, die zich inzetten voor opwekking,
-    transport en gebruik van duurzame energie"
+  m_text: 'WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW
+
+    WWWWWWWWWWWWWWWWWWWWWWWW'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3517,8 +3540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.0400095, y: 367.32}
-  m_SizeDelta: {x: 905.41, y: 106.38}
+  m_AnchoredPosition: {x: 80.72043, y: 367.32}
+  m_SizeDelta: {x: 1038.7708, y: 106.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3074881033073197499
 CanvasRenderer:
@@ -3548,7 +3571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Energy Co-op
+  m_text: WWWWWWWWWWWWWWWWWWWWW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
