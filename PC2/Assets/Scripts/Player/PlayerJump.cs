@@ -50,6 +50,9 @@ public class PlayerJump : MonoBehaviour, IAbility
 
     [Header("Audio")]
     public AudioSource jumpSound;
+    public AudioSource glideStartSound;
+    public AudioSource glidingSound;
+    public bool playglideStartNextTime;
 
     void Awake()
     {
@@ -95,11 +98,19 @@ public class PlayerJump : MonoBehaviour, IAbility
 
         if (glideEnabled && velocity.y < 0 && pressingJump && !gliding)
         {
+            if (playglideStartNextTime && !onGround && velocity.y < 0)
+            {
+                glideStartSound.Play();
+                playglideStartNextTime = false;
+            }
             gliding = true;
+            glidingSound.Play();
         }
         if (gliding && (onGround || !pressingJump))
         {
             gliding = false;
+            glidingSound.Stop();
+            playglideStartNextTime = true;
         }
         CalculateGravityScale(); //Changes gravity scale making you fall at different speeds
     }
