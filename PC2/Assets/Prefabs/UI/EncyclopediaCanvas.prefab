@@ -1506,7 +1506,7 @@ MonoBehaviour:
       te helpen mee te doen aan de energietransitie!"
     source: https://www.hier.nu/impact
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
-    button: {fileID: 6072300496560067019}
+    button: {fileID: 3081682458990207536}
   - title: Zonnepanelen
     info1: "Zonnepanelen zetten zonlicht om in gelijkstroom via zonnecellen, meestal
       gemaakt van silicium. Deze gelijkstroom wordt vervolgens via een omvormer omgezet
@@ -1519,7 +1519,7 @@ MonoBehaviour:
       zonnepaneel wekt dus zo'n 315kWh per jaar.
     source: 'natuurenmilieu.nl: Leg zonnepanelen op het dak'
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
-    button: {fileID: 3081682458990207536}
+    button: {fileID: 6845130735242736098}
   - title: Energie armoede
     info1: "Energiearmoede ontstaat wanneer huishoudens geen goede toegang hebben
       tot energievoorzieningen in huis, door:  de hoge energieprijs,  de slechte
@@ -1534,7 +1534,7 @@ MonoBehaviour:
       te pakken. Iedereen moet kunnen meedoen.
     source: 'academie.energiesamen.nu: Energiearmoede verminderen'
     img: {fileID: 21300000, guid: bedf6ea63e3f09244942e11aa54b1a9b, type: 3}
-    button: {fileID: 6845130735242736098}
+    button: {fileID: 6072300496560067019}
   - title: Isoleren
     info1: "Als je je huis verwarmt met de verwarming, gebruik je gas en dat kost
       geld. Als de warme lucht dan ontsnapt door gaten en kieren, verbruik je nog
