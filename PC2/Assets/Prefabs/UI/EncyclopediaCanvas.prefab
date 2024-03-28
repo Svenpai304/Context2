@@ -1508,15 +1508,13 @@ MonoBehaviour:
     img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
     button: {fileID: 6072300496560067019}
   - title: Zonnepanelen
-    info1: "Energiearmoede ontstaat wanneer huishoudens geen goede toegang hebben
-      tot energievoorzieningen in huis door: de hoge energieprijs,  de slechte kwaliteit
-      van het huis, en  beperkte financi\xEBle middelen om deel te nemen aan de energietransitie.
-      TNO schat dat 750.000 huishoudens in Nederland momenteel of binnenkort hun
-      energierekening niet kunnen betalen. Deze huishoudens wonen vaak in slecht
-      ge\xEFsoleerde huizen, wat ook nog eens kan leiden tot schimmel en gezondheidsproblemen
-      door de kou. Ze moeten kiezen tussen een warme maaltijd of een warme kamer.
-      Zonder de financi\xEBle middelen om verbeteringen aan te brengen, blijft deze
-      schrijnende situatie voortduren."
+    info1: "Zonnepanelen zetten zonlicht om in gelijkstroom via zonnecellen, meestal
+      gemaakt van silicium. Deze gelijkstroom wordt vervolgens via een omvormer omgezet
+      in wisselstroom, die we kunnen gebruiken in ons elektriciteitsnetwerk. Belangrijk
+      bij installatie is de juiste locatie en ori\xEBntatie voor maximale blootstelling
+      aan de zon, keuze van panelen en omvormer, en het regelen van vergunningen
+      en netwerkaansluitingen. Financi\xEBle aspecten zoals initi\xEBle kosten en
+      verwacht rendement zijn ook relevant, evenals minimaal onderhoud en duurzaamheid. "
     info2: Standaard zonnepanelen hebben een vermogen van rond de 370Wp. Een gemiddeld
       zonnepaneel wekt dus zo'n 315kWh per jaar.
     source: 'natuurenmilieu.nl: Leg zonnepanelen op het dak'
@@ -1535,7 +1533,7 @@ MonoBehaviour:
     info2: Energie co-ops proberen dit probleem bij hun energietransitie doelen aan
       te pakken. Iedereen moet kunnen meedoen.
     source: 'academie.energiesamen.nu: Energiearmoede verminderen'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    img: {fileID: 21300000, guid: bedf6ea63e3f09244942e11aa54b1a9b, type: 3}
     button: {fileID: 6845130735242736098}
   - title: Isoleren
     info1: "Als je je huis verwarmt met de verwarming, gebruik je gas en dat kost
@@ -1551,7 +1549,7 @@ MonoBehaviour:
     info2: 
     source: 'regionaalenergieloket.nl: Radiatorfolie, radar.avrotros.nl: Besparen
       op je energierekening met tochtstrips?'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    img: {fileID: 21300000, guid: 528245d7698615b4b9cc8fe00522693a, type: 3}
     button: {fileID: 5987287760814726582}
   - title: Fossiele brandstoffen
     info1: 'Fossiele brandstoffen, zoals aardolie en aardgas, bevatten koolstof die
@@ -1568,7 +1566,7 @@ MonoBehaviour:
       kan veroorzaken. Ongelukken met olietankers en pijpleidingen zijn schadelijk
       voor het milieu. '
     source: 'milieucentraal.nl: Kolen, olie en gas'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    img: {fileID: 21300000, guid: 191c4da7e13d6a0449dbee1eb7f9d3c8, type: 3}
     button: {fileID: 4974786806936660336}
   - title: Klimaatverandering
     info1: Het klimaat is eigenlijk het gemiddelde weer over zo'n 30 jaar. Klimaatverandering
@@ -1579,7 +1577,7 @@ MonoBehaviour:
       aan de natuur, de economie en dus aan mensen
     info2: 
     source: 'urgenda.nl: Wat is klimaatverandering?'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    img: {fileID: 21300000, guid: ad46ae7bf1279b246b46e0a1a92cae90, type: 3}
     button: {fileID: 7474604269619716822}
   - title: Maatschappelijk draagvlak
     info1: 'Stel je voor dat je in een stad woont en je hoort dat er plannen zijn
@@ -1595,7 +1593,7 @@ MonoBehaviour:
       wordt de energietransitie niet alleen goed voor het klimaat, maar ook voor
       de mensen die erin wonen."
     source: 'reswestoverijssel.nl: Wat is draagvlak?'
-    img: {fileID: 21300000, guid: c566ba4d29956734aab8e0b008e795db, type: 3}
+    img: {fileID: 21300000, guid: 5b11f2cb9d68bc842a06cfb3f0b951cc, type: 3}
     button: {fileID: 9001032862932379092}
   title: {fileID: 4199837121000953575}
   info1: {fileID: 4905071737395386}
